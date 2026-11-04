@@ -1,0 +1,57 @@
+Result: 3DKM esm2-650m FoldX MPNNddG Rasp 0.68213
+Result: 2KVS esm2-650m FoldX MPNNddG Rasp 0.79605
+Result: 4C26 esm2-650m FoldX MPNNddG Rasp 0.73135
+Result: 2KXD esm2-650m FoldX MPNNddG Rasp 0.70726
+Result: 1TUC esm2-650m FoldX MPNNddG Rasp 0.69221
+Result: HEEH_KT_rd6_0793 esm2-650m FoldX MPNNddG Rasp 0.72742
+Result: 1GYZ esm2-650m FoldX MPNNddG Rasp 0.67207
+Result: r12_757_TrROS_Hall esm2-650m FoldX MPNNddG Rasp 0.61377
+Result: 2LQK esm2-650m FoldX MPNNddG Rasp 0.67401
+Result: HHH_rd1_0142 esm2-650m FoldX MPNNddG Rasp 0.76598
+Result: HHH_rd1_0244 esm2-650m FoldX MPNNddG Rasp 0.74949
+Result: HEEH_KT_rd6_0746 esm2-650m FoldX MPNNddG Rasp 0.69318
+Result: 2K1B esm2-650m FoldX MPNNddG Rasp 0.71478
+Result: 2K28 esm2-650m FoldX MPNNddG Rasp 0.67016
+Result: 2BTH esm2-650m FoldX MPNNddG Rasp 0.80431
+Result: 2WXC esm2-650m FoldX MPNNddG Rasp 0.78922
+Result: 1W4H esm2-650m FoldX MPNNddG Rasp 0.79901
+Result: 2L33 esm2-650m FoldX MPNNddG Rasp 0.57413
+Result: r11_1081_TrROS_Hall esm2-650m FoldX MPNNddG Rasp 0.57828
+Result: r18_3_TrROS_Hall esm2-650m FoldX MPNNddG Rasp 0.58880
+Result: 2K5H esm2-650m FoldX MPNNddG Rasp 0.77236
+Result: 1QKH esm2-650m FoldX MPNNddG Rasp 0.66417
+Result: 1QP2 esm2-650m FoldX MPNNddG Rasp 0.67129
+Result: 1PSE esm2-650m FoldX MPNNddG Rasp 0.63178
+Result: 2KWH esm2-650m FoldX MPNNddG Rasp 0.70137
+Result: 6EWS esm2-650m FoldX MPNNddG Rasp 0.78401
+Result: 6EWT esm2-650m FoldX MPNNddG Rasp 0.78028
+Result: 6EWU esm2-650m FoldX MPNNddG Rasp 0.76640
+                 pdb_id   val_ans
+0                  3DKM  0.682133
+1                  2KVS  0.796052
+2                  4C26  0.731350
+3                  2KXD  0.707256
+4                  1TUC  0.692215
+5      HEEH_KT_rd6_0793  0.727423
+6                  1GYZ  0.672068
+7    r12_757_TrROS_Hall  0.613773
+8                  2LQK  0.674012
+9          HHH_rd1_0142  0.765980
+10         HHH_rd1_0244  0.749486
+11     HEEH_KT_rd6_0746  0.693185
+12                 2K1B  0.714777
+13                 2K28  0.670158
+14                 2BTH  0.804315
+15                 2WXC  0.789223
+16                 1W4H  0.799011
+17                 2L33  0.574131
+18  r11_1081_TrROS_Hall  0.578276
+19     r18_3_TrROS_Hall  0.588799
+20                 2K5H  0.772362
+21                 1QKH  0.664167
+22                 1QP2  0.671287
+23                 1PSE  0.631782
+24                 2KWH  0.701371
+25                 6EWS  0.784014
+26                 6EWT  0.780276
+27                 6EWU  0.766397

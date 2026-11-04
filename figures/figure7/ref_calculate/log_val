@@ -1,0 +1,63 @@
+Result: r15_550_TrROS_Hall esm2-650m FoldX MPNNddG Rasp 0.65666
+Result: 2LC2 esm2-650m FoldX MPNNddG Rasp 0.76682
+Result: 3ZGK esm2-650m FoldX MPNNddG Rasp 0.73240
+Result: v2_2LC2 esm2-650m FoldX MPNNddG Rasp 0.79990
+Result: 2K5P esm2-650m FoldX MPNNddG Rasp 0.80690
+Result: HEEH_KT_rd6_1415 esm2-650m FoldX MPNNddG Rasp 0.63458
+Result: 6ACV esm2-650m FoldX MPNNddG Rasp 0.68524
+Result: r10_572_TrROS_Hall esm2-650m FoldX MPNNddG Rasp 0.73575
+Result: 2YSF esm2-650m FoldX MPNNddG Rasp 0.74050
+Result: 2OP7 esm2-650m FoldX MPNNddG Rasp 0.75991
+Result: 1WR4 esm2-650m FoldX MPNNddG Rasp 0.41040
+Result: 2M9E esm2-650m FoldX MPNNddG Rasp 0.75076
+Result: 2M9I esm2-650m FoldX MPNNddG Rasp 0.71375
+Result: 2M9F esm2-650m FoldX MPNNddG Rasp 0.70698
+Result: 2KCF esm2-650m FoldX MPNNddG Rasp 0.76448
+Result: 1I6C esm2-650m FoldX MPNNddG Rasp 0.66499
+Result: 1V1C esm2-650m FoldX MPNNddG Rasp 0.73528
+Result: r3_162_TrROS_Hall esm2-650m FoldX MPNNddG Rasp 0.47655
+Result: 2WNM esm2-650m FoldX MPNNddG Rasp 0.74791
+Result: v2_2LDM esm2-650m FoldX MPNNddG Rasp 0.73263
+Result: HHH_rd1_0949 esm2-650m FoldX MPNNddG Rasp 0.79163
+Result: HHH_rd4_0557 esm2-650m FoldX MPNNddG Rasp 0.71775
+Result: HHH_rd4_0395 esm2-650m FoldX MPNNddG Rasp 0.79507
+Result: HHH_rd4_0124 esm2-650m FoldX MPNNddG Rasp 0.68170
+Result: HHH_rd4_0613 esm2-650m FoldX MPNNddG Rasp 0.70441
+Result: 2K9D esm2-650m FoldX MPNNddG Rasp 0.78098
+Result: 5LXJ esm2-650m FoldX MPNNddG Rasp 0.81606
+Result: 2RU9 esm2-650m FoldX MPNNddG Rasp 0.70620
+Result: r11_569_TrROS_Hall esm2-650m FoldX MPNNddG Rasp 0.67740
+Result: HEEH_rd4_0094 esm2-650m FoldX MPNNddG Rasp 0.67554
+Result: 1WCL esm2-650m FoldX MPNNddG Rasp 0.83208
+                pdb_id   val_ans
+0   r15_550_TrROS_Hall  0.656664
+1                 2LC2  0.766824
+2                 3ZGK  0.732404
+3              v2_2LC2  0.799904
+4                 2K5P  0.806898
+5     HEEH_KT_rd6_1415  0.634585
+6                 6ACV  0.685237
+7   r10_572_TrROS_Hall  0.735752
+8                 2YSF  0.740501
+9                 2OP7  0.759913
+10                1WR4  0.410403
+11                2M9E  0.750761
+12                2M9I  0.713755
+13                2M9F  0.706977
+14                2KCF  0.764478
+15                1I6C  0.664994
+16                1V1C  0.735281
+17   r3_162_TrROS_Hall  0.476555
+18                2WNM  0.747911
+19             v2_2LDM  0.732634
+20        HHH_rd1_0949  0.791629
+21        HHH_rd4_0557  0.717745
+22        HHH_rd4_0395  0.795074
+23        HHH_rd4_0124  0.681703
+24        HHH_rd4_0613  0.704412
+25                2K9D  0.780982
+26                5LXJ  0.816059
+27                2RU9  0.706204
+28  r11_569_TrROS_Hall  0.677403
+29       HEEH_rd4_0094  0.675536
+30                1WCL  0.832084

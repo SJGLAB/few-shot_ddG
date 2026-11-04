@@ -1,0 +1,10 @@
+(500, 15) (475, 15)
+Result: 500 2M8I 2M9E esm2-650m FoldX MPNNddG Rasp 0.78060 0.80239
+(500, 15) (1168, 15)
+Result: 500 2KR3 2KXD esm2-650m FoldX MPNNddG Rasp 0.71617 0.75266
+(500, 15) (1039, 15)
+Result: 500 1H8K 1TUC esm2-650m FoldX MPNNddG Rasp 0.76664 0.72373
+   apdb  bpdb  num_sample  train_ans   val_ans
+0  2M8I  2M9E         500   0.780597  0.802393
+1  2KR3  2KXD         500   0.716172  0.752659
+2  1H8K  1TUC         500   0.766643  0.723727

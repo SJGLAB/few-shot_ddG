@@ -1,0 +1,267 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+plt.rc('font', family='Times New Roman', size=15)
+
+fig, axes = plt.subplots(2, 2, figsize=(18, 14))
+
+train_df = pd.read_csv('train_df.csv')
+val_df = pd.read_csv('val_df.csv')
+pdb_ids = train_df['pdb_id'].unique()
+
+ax = axes[0,0]
+train_num_lst = []
+train_pos_lst = []
+val_num_lst = []
+val_pos_lst = []
+icount = 0
+for pdb_id in pdb_ids:
+    pdb_df = train_df[train_df['pdb_id']==pdb_id]
+    pdb_val_df = val_df[val_df['pdb_id']==pdb_id]
+
+    train_pos_lst.append(icount)
+    train_num_lst.append(pdb_df.shape[0])
+
+    val_pos_lst.append(icount+1)
+    val_num_lst.append(pdb_val_df.shape[0])
+
+    icount += 3
+
+bars = ax.barh(train_pos_lst,train_num_lst,label='Train')
+ax.bar_label(bars, fmt='%d', padding=3)
+ax.set_yticks(train_pos_lst)
+ax.set_yticklabels(pdb_ids,fontsize=10)
+ax.set_xlim(180)
+
+ax.text(
+    -0.1,1.05,'(a)',
+    transform=ax.transAxes,
+    fontsize=18,
+    fontweight='bold'
+)
+
+ax = axes[1,0]
+df = pd.read_csv('result.csv')
+num_lst=[]
+val_lst=[]
+for num_sample in df['num_sample'].unique():
+    tp_df=df[df['num_sample']==num_sample]
+
+    num_lst.append(num_sample)
+    val_lst.append(tp_df['val_ans'].mean())
+ax.plot(num_lst,val_lst,'-*')
+
+ax.set_xlabel('Number of samples')
+ax.set_ylabel('|SCC|')
+ax.text(
+    -0.1,1.05,'(b)',
+    transform=ax.transAxes,
+    fontsize=18,
+    fontweight='bold'
+)
+
+ax = axes[0,1]
+df = pd.read_csv('result.csv')
+df_other = pd.read_csv('result_by_other.csv')
+max_indices=df.groupby('pdb_id')['num_sample'].idxmax()
+result_max_df=df.loc[max_indices]
+df_other['val_ans']=0.0
+
+for idx,row in df_other.iterrows():
+    df_other.at[idx, 'val_ans'] = result_max_df[result_max_df['pdb_id'] == row.pdb_id]['val_ans'].values[0]
+
+labels = ['Protein-specific','Cross-protein']
+colors=['C0','C2']
+for i,col in enumerate(['val_ans','val_ans_other']):
+    ax.scatter(
+        df_other[col].values,
+        df_other.index+1,
+        c=colors[i],
+        label=labels[i]
+    )
+
+ax.set_yticks(df_other.index+1)
+ax.set_yticklabels(df_other['pdb_id'])
+ax.text(
+    -0.1,1.05,'(c)',
+    transform=ax.transAxes,
+    fontsize=18,
+    fontweight='bold'
+)
+
+plt.savefig('case-by-case_summary.png',bbox_inches='tight',pad_inches=0.1)
+exit()
+
+
+
+# ======================
+# (d) Boxplot
+# ======================
+ax = axes[1,1]
+
+
+dat=[
+    df_other['val_ans'].values,
+    df_other['val_ans_other'].values
+]
+
+
+bplot=ax.boxplot(
+    dat,
+    tick_labels=labels,
+    vert=False,
+    showfliers=False,
+    patch_artist=True
+)
+
+
+for patch,color in zip(
+    bplot['boxes'],
+    colors
+):
+    patch.set_facecolor(color)
+
+
+
+ax.scatter(
+    df_other['val_ans'],
+    np.ones(df_other.shape[0])
+)
+
+ax.scatter(
+    df_other['val_ans_other'],
+    np.ones(df_other.shape[0])*2
+)
+
+
+ax.text(
+    -0.1,1.05,'(d)',
+    transform=ax.transAxes,
+    fontsize=18,
+    fontweight='bold'
+)
+
+
+
+# 共用legend
+handles, labels = axes[0,1].get_legend_handles_labels()
+
+fig.legend(
+    handles,
+    labels,
+    loc='upper center',
+    ncol=2,
+    bbox_to_anchor=(0.5,1.02),
+    frameon=False
+)
+
+
+plt.tight_layout(
+    rect=[0,0,1,0.93]
+)
+
+
+plt.savefig(
+    'case-by-case_summary.png',
+    dpi=300,
+    bbox_inches='tight',
+    pad_inches=0.1
+)
+
+plt.show()
+
+
+
+
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(22,12))
+
+train_df = pd.read_csv('train_df.csv')
+val_df = pd.read_csv('val_df.csv')
+pdb_ids = train_df['pdb_id'].unique()
+
+plt.subplot(221)
+train_num_lst = []
+val_num_lst = []
+num_lst = []
+
+train_pos_lst = []
+val_pos_lst = []
+pos_lst = []
+icount = 0
+for pdb_id in pdb_ids:
+    pdb_df = train_df[train_df['pdb_id'] == pdb_id]
+    pdb_val_df = val_df[val_df['pdb_id'] == pdb_id]
+    print(pdb_id,pdb_df.shape,pdb_val_df.shape)
+
+    train_pos_lst.append(icount)
+    train_num_lst.append(pdb_df.shape[0])
+    val_pos_lst.append(icount+1)
+    val_num_lst.append(pdb_val_df.shape[0])
+
+    pos_lst.append(icount)
+    num_lst.append(pdb_df.shape[0])
+    pos_lst.append(icount+1)
+    num_lst.append(pdb_val_df.shape[0])
+    icount += 3
+
+bars = plt.barh(train_pos_lst, train_num_lst)
+plt.bar_label(bars, fmt='%d', padding=3)
+plt.yticks(ticks=train_pos_lst,labels=pdb_ids)
+plt.xlim(180)
+
+plt.subplot(223)
+df = pd.read_csv('result.csv')
+num_samples = df['num_sample'].unique()
+num_lst = []
+val_lst = []
+for num_sample in num_samples:
+    tp_df = df[df['num_sample'] == num_sample]
+    val = tp_df['val_ans'].values
+
+    num_lst.append(num_sample)
+    val_lst.append(np.mean(val))
+    print(num_sample,len(val),np.mean(val))
+
+plt.plot(num_lst,val_lst,'-*')
+
+df = pd.read_csv('result.csv')
+df_other = pd.read_csv('result_by_other.csv')
+
+max_indices = df.groupby('pdb_id')['num_sample'].idxmax()
+result_max_df = df.loc[max_indices]
+print(result_max_df)
+print(df_other)
+
+df_other['val_ans'] = 0.0
+for idx,row in df_other.iterrows():
+    df_other.at[idx, 'val_ans'] = result_max_df[result_max_df['pdb_id'] == row.pdb_id]['val_ans'].values[0]
+print(df_other)
+
+lst = ['val_ans','val_ans_other']
+dat = []
+
+ax_b = plt.subplot(222)
+count = 0
+colors = ['C0', 'C2']
+for col in lst:
+    plt.scatter(df_other[col].values,list(df_other[col].index+1),c=colors[count])
+    dat.append(df_other[col].values)
+    count += 1
+plt.yticks(ticks=list(df_other['pdb_id'].index+1),labels=list(df_other['pdb_id'].values))
+plt.legend(lst)
+
+plt.subplot(224,sharex=ax_b)
+bplot = plt.boxplot(dat, tick_labels=lst, vert=False, showfliers=False, patch_artist=True, medianprops={'color': 'C1', 'linewidth': 2})
+for patch, color in zip(bplot['boxes'], colors):
+    patch.set_facecolor(color)
+yones = np.ones(df_other.shape[0])
+plt.scatter(df_other['val_ans'].values,yones,c='C0')
+plt.scatter(df_other['val_ans_other'].values,yones*2,c='C2')
+
+plt.savefig('case-by-case_summary.png',bbox_inches='tight',pad_inches=0.1)
