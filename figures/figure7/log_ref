@@ -1,0 +1,10 @@
+(500, 10) (475, 10)
+Result: 500 r10_437_TrROS_Hall 2M9E esm2-650m FoldX MPNNddG Rasp 0.70903 0.76179
+(500, 10) (1168, 10)
+Result: 500 r10_437_TrROS_Hall 2KXD esm2-650m FoldX MPNNddG Rasp 0.70903 0.72320
+(500, 10) (1039, 10)
+Result: 500 r10_437_TrROS_Hall 1TUC esm2-650m FoldX MPNNddG Rasp 0.70903 0.70839
+                 apdb  bpdb  num_sample  train_ans   val_ans
+0  r10_437_TrROS_Hall  2M9E         500   0.709031  0.761793
+1  r10_437_TrROS_Hall  2KXD         500   0.709031  0.723203
+2  r10_437_TrROS_Hall  1TUC         500   0.709031  0.708386

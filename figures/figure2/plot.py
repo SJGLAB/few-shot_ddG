@@ -10,7 +10,7 @@ for col in lst:
     axes[0].scatter(df[col].values, df.index + 1, label=col)
 axes[0].set_yticks(df.index + 1)
 axes[0].set_yticklabels(df['DataSet'].values)
-axes[0].set_xlabel('|SCC|')
+axes[0].set_xlabel('SCC')
 axes[0].text(
     -0.20, 1.0,
     'a',
@@ -25,7 +25,7 @@ for col in lst:
     axes[1].scatter(df[col].values, df.index + 1, label=col)
 axes[1].set_yticks(df.index + 1)
 axes[1].set_yticklabels(df['DataSet'].values)
-axes[1].set_xlabel('|PCC|')
+axes[1].set_xlabel('PCC')
 axes[1].text(
     -0.20, 1.0,
     'b',

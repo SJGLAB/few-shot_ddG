@@ -1,0 +1,129 @@
+/mnt/d/NVSI/A2-zero-shot/linear/all_in_one/v6/megascale/analysis/figure3/calculate_train.py:73: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  train_df['mixed_val'] = mixed_val
+        Unnamed: 0              pdb_id  pos  ...      FoldX   MPNNddG      Rasp
+0                0  r10_437_TrROS_Hall    1  ...  -0.098673  0.319760 -0.010921
+1                1  r10_437_TrROS_Hall    1  ...  -0.099744  0.221112 -0.470826
+2                2  r10_437_TrROS_Hall    1  ...  -0.228194  0.686056 -0.352271
+3                3  r10_437_TrROS_Hall    1  ...   0.028379  0.033919 -0.476908
+4                4  r10_437_TrROS_Hall    1  ...  -0.564890  0.598881 -0.110702
+...            ...                 ...  ...  ...        ...       ...       ...
+215726      215726       HEEH_rd3_0055   43  ...  -1.214910  0.866614  0.392125
+215727      215727       HEEH_rd3_0055   43  ...   0.341603  0.744111  0.946862
+215728      215728       HEEH_rd3_0055   43  ...   0.332295  1.161070  0.731387
+215729      215729       HEEH_rd3_0055   43  ...  12.195100  1.176719  7.329979
+215730      215730       HEEH_rd3_0055   43  ...   1.331050  0.336356  2.134827
+
+[215731 rows x 10 columns]
+['r10_437_TrROS_Hall' 'r11_233_TrROS_Hall' 'r11_797_TrROS_Hall'
+ 'r11_829_TrROS_Hall' 'r11_951_TrROS_Hall' 'r4_412_TrROS_Hall'
+ 'r6_560_TrROS_Hall' 'r6_831_TrROS_Hall' 'r7_587_TrROS_Hall'
+ 'EEHEE_rd3_0019' 'EEHEE_rd3_0094' 'EEHEE_rd3_0130' 'EEHEE_rd3_0146'
+ 'EEHEE_rd3_0602' 'EEHEE_rd3_1049' 'EEHEE_rd3_1367' 'EEHEE_rd3_1498'
+ 'EEHEE_rd3_1587' 'EEHEE_rd3_1716' 'EEHEE_rd3_1810' 'EEHEE_rd4_0003'
+ 'EEHEE_rd4_0363' 'EEHEE_rd4_0371' 'EEHEE_rd4_0469' 'EEHEE_rd4_0647'
+ 'EEHEE_rd4_0763' 'EEHEE_rd4_0794' 'EHEE_rd1_0101' 'EHEE_rd1_0407'
+ 'EHEE_rd1_0459' 'EHEE_rd2_0152' 'EHEE_rd2_0191' 'EHEE_rd2_0196'
+ 'EHEE_rd2_0372' 'EHEE_rd2_0487' 'EHEE_rd2_0601' 'EHEE_rd2_0751'
+ 'EHEE_rd2_1106' 'EHEE_rd2_1257' 'EHEE_rd3_0035' 'EHEE_rd3_0053'
+ 'EHEE_rd4_0086' 'EHEE_rd4_0172' 'EHEE_rd4_0195' 'EHEE_rd4_0325'
+ 'EHEE_rd4_0463' 'EHEE_rd4_0625' 'EHEE_rd4_0840' 'EHEE_rd4_0864'
+ 'HEEH_KT_rd6_0007' 'HEEH_KT_rd6_0790' 'HEEH_KT_rd6_3632' 'HEEH_rd3_0223'
+ 'HEEH_rd4_0097' 'HEEH_rd4_0349' 'HHH_rd1_0335' 'HHH_rd1_0473'
+ 'HHH_rd1_0516' 'HHH_rd1_0598' 'HHH_rd1_0606' 'HHH_rd2_0181'
+ 'HHH_rd4_0676' 'HHH_rd4_0816' 'HHH_rd4_0870' '1LP1' '2B88' '2HBB' '2D1U'
+ '1UFM' '1O6X' '2AMI' '2M2J' '2MA4' '5KPH' '2MC5' '2KFV' '3L1X' '7BPM'
+ '1ZHC' '2KCM' '2M8U' '2RRT' '2O2W' '2JT1' '2K5N' '2JN4' '2M0Y' '1F0M'
+ '2LO1' '2LGW' '1YU5' '2KR3' '2RJV' '1TG0' '6M3N' '1UZC' '3MYC' '2K2A'
+ '2KGT' '1A32' '2JTV' '1ORC' '5VNT' '2LYQ' '2OCH' '2LYR' '2L9R' '2MCK'
+ '2BTT' '1R69' '6SCW' '1TUD' '6NMW' '4HCK' '2M6Y' '2LJ3' '5JRT' '1I2T'
+ '1Y0M' '1QLY' '1GL5' '1H92' '1PWT' '3CQT' '5OAO' '1YP5' '3I35' '7JJK'
+ '2LP5' '1QKX' '5UBS' '1ZLM' '2JVG' '2CDT' '2JZ2' '5UCE' '2L2P' '2L6Q'
+ '1SRM' '2LHR' '2MI6' '1JIC' '2MKY' '2CJJ' '2MXD' '2KRU' '2M2L' '2L7M'
+ '2MYX' '2L09' '2KVT' '2L7F' '2JWT' '6SOW' '2KZJ' '2N88' '2M0C' '2JWS'
+ '1ENH' '4G3O' '5Z2S' '2LVN' '1GJS' '6FVC' '2L2D' '5UYO' '2WQG' '2RRU'
+ '2JVD' '5UP5' '2M8E' '6YSE' '2QFF' '1AOY' 'v2_2HDZ' 'v2K43S_2KVV'
+ 'v2_2LXE' 'v2_2M5A' 'v2_4UZX' 'v2_6IVS' '1IFY' '1K1V' '1PV0' '1W4G'
+ '2GP8' '2M8I' '2M8J' '4UZW' 'r16_88_TrROS_Hall' 'EEHEE_rd3_0657'
+ 'EHEE_rd4_0044' 'EEHEE_rd4_0256' 'EEHEE_rd4_0784' 'EHEE_rd4_0098'
+ 'EHEE_rd4_0394' 'EHEE_rd4_0726' 'HHH_rd2_0155' 'EEHEE_rd3_0809'
+ 'EEHEE_rd3_1615' 'EEHEE_rd3_1702' 'EEHEE_rd3_1818' 'EEHEE_rd4_0470'
+ 'HEEH_KT_rd6_0280' 'HHH_rd1_0493' 'HHH_rd1_0578' '1URF' '6IWS' '2MCH'
+ '1OPS' '1E6H' '2EXD' '1H8K' '2LUM' '2B89' '1W4F' '5AHT' '1E0L' '1VII'
+ '2MW9' '2MWA' '2MWB' '2N4R' '2YSB' '1YRF' '3V1A' 'EHEE_rd4_0502'
+ 'EHEE_rd4_0877' 'EEHEE_rd4_0308' 'EEHEE_rd4_0481' '2LCL' '2MH8' '2LHC'
+ 'r10_490_TrROS_Hall' '6OBK' 'r4_43_TrROS_Hall' 'EEHEE_rd4_0005'
+ 'HEEH_KT_rd6_0872' 'HEEH_KT_rd6_3546' 'HEEH_rd3_0055']
+        Unnamed: 0              pdb_id  pos  ...      FoldX   MPNNddG      Rasp
+0                0  r10_437_TrROS_Hall    1  ...  -0.098673  0.319760 -0.010921
+1                1  r10_437_TrROS_Hall    1  ...  -0.099744  0.221112 -0.470826
+2                2  r10_437_TrROS_Hall    1  ...  -0.228194  0.686056 -0.352271
+3                3  r10_437_TrROS_Hall    1  ...   0.028379  0.033919 -0.476908
+4                4  r10_437_TrROS_Hall    1  ...  -0.564890  0.598881 -0.110702
+...            ...                 ...  ...  ...        ...       ...       ...
+215726      215726       HEEH_rd3_0055   43  ...  -1.214910  0.866614  0.392125
+215727      215727       HEEH_rd3_0055   43  ...   0.341603  0.744111  0.946862
+215728      215728       HEEH_rd3_0055   43  ...   0.332295  1.161070  0.731387
+215729      215729       HEEH_rd3_0055   43  ...  12.195100  1.176719  7.329979
+215730      215730       HEEH_rd3_0055   43  ...   1.331050  0.336356  2.134827
+
+[215731 rows x 10 columns]
+['r10_437_TrROS_Hall' 'r11_233_TrROS_Hall' 'r11_797_TrROS_Hall'
+ 'r11_829_TrROS_Hall' 'r11_951_TrROS_Hall' 'r4_412_TrROS_Hall'
+ 'r6_560_TrROS_Hall' 'r6_831_TrROS_Hall' 'r7_587_TrROS_Hall'
+ 'EEHEE_rd3_0019' 'EEHEE_rd3_0094' 'EEHEE_rd3_0130' 'EEHEE_rd3_0146'
+ 'EEHEE_rd3_0602' 'EEHEE_rd3_1049' 'EEHEE_rd3_1367' 'EEHEE_rd3_1498'
+ 'EEHEE_rd3_1587' 'EEHEE_rd3_1716' 'EEHEE_rd3_1810' 'EEHEE_rd4_0003'
+ 'EEHEE_rd4_0363' 'EEHEE_rd4_0371' 'EEHEE_rd4_0469' 'EEHEE_rd4_0647'
+ 'EEHEE_rd4_0763' 'EEHEE_rd4_0794' 'EHEE_rd1_0101' 'EHEE_rd1_0407'
+ 'EHEE_rd1_0459' 'EHEE_rd2_0152' 'EHEE_rd2_0191' 'EHEE_rd2_0196'
+ 'EHEE_rd2_0372' 'EHEE_rd2_0487' 'EHEE_rd2_0601' 'EHEE_rd2_0751'
+ 'EHEE_rd2_1106' 'EHEE_rd2_1257' 'EHEE_rd3_0035' 'EHEE_rd3_0053'
+ 'EHEE_rd4_0086' 'EHEE_rd4_0172' 'EHEE_rd4_0195' 'EHEE_rd4_0325'
+ 'EHEE_rd4_0463' 'EHEE_rd4_0625' 'EHEE_rd4_0840' 'EHEE_rd4_0864'
+ 'HEEH_KT_rd6_0007' 'HEEH_KT_rd6_0790' 'HEEH_KT_rd6_3632' 'HEEH_rd3_0223'
+ 'HEEH_rd4_0097' 'HEEH_rd4_0349' 'HHH_rd1_0335' 'HHH_rd1_0473'
+ 'HHH_rd1_0516' 'HHH_rd1_0598' 'HHH_rd1_0606' 'HHH_rd2_0181'
+ 'HHH_rd4_0676' 'HHH_rd4_0816' 'HHH_rd4_0870' '1LP1' '2B88' '2HBB' '2D1U'
+ '1UFM' '1O6X' '2AMI' '2M2J' '2MA4' '5KPH' '2MC5' '2KFV' '3L1X' '7BPM'
+ '1ZHC' '2KCM' '2M8U' '2RRT' '2O2W' '2JT1' '2K5N' '2JN4' '2M0Y' '1F0M'
+ '2LO1' '2LGW' '1YU5' '2KR3' '2RJV' '1TG0' '6M3N' '1UZC' '3MYC' '2K2A'
+ '2KGT' '1A32' '2JTV' '1ORC' '5VNT' '2LYQ' '2OCH' '2LYR' '2L9R' '2MCK'
+ '2BTT' '1R69' '6SCW' '1TUD' '6NMW' '4HCK' '2M6Y' '2LJ3' '5JRT' '1I2T'
+ '1Y0M' '1QLY' '1GL5' '1H92' '1PWT' '3CQT' '5OAO' '1YP5' '3I35' '7JJK'
+ '2LP5' '1QKX' '5UBS' '1ZLM' '2JVG' '2CDT' '2JZ2' '5UCE' '2L2P' '2L6Q'
+ '1SRM' '2LHR' '2MI6' '1JIC' '2MKY' '2CJJ' '2MXD' '2KRU' '2M2L' '2L7M'
+ '2MYX' '2L09' '2KVT' '2L7F' '2JWT' '6SOW' '2KZJ' '2N88' '2M0C' '2JWS'
+ '1ENH' '4G3O' '5Z2S' '2LVN' '1GJS' '6FVC' '2L2D' '5UYO' '2WQG' '2RRU'
+ '2JVD' '5UP5' '2M8E' '6YSE' '2QFF' '1AOY' 'v2_2HDZ' 'v2K43S_2KVV'
+ 'v2_2LXE' 'v2_2M5A' 'v2_4UZX' 'v2_6IVS' '1IFY' '1K1V' '1PV0' '1W4G'
+ '2GP8' '2M8I' '2M8J' '4UZW' 'r16_88_TrROS_Hall' 'EEHEE_rd3_0657'
+ 'EHEE_rd4_0044' 'EEHEE_rd4_0256' 'EEHEE_rd4_0784' 'EHEE_rd4_0098'
+ 'EHEE_rd4_0394' 'EHEE_rd4_0726' 'HHH_rd2_0155' 'EEHEE_rd3_0809'
+ 'EEHEE_rd3_1615' 'EEHEE_rd3_1702' 'EEHEE_rd3_1818' 'EEHEE_rd4_0470'
+ 'HEEH_KT_rd6_0280' 'HHH_rd1_0493' 'HHH_rd1_0578' '1URF' '6IWS' '2MCH'
+ '1OPS' '1E6H' '2EXD' '1H8K' '2LUM' '2B89' '1W4F' '5AHT' '1E0L' '1VII'
+ '2MW9' '2MWA' '2MWB' '2N4R' '2YSB' '1YRF' '3V1A' 'EHEE_rd4_0502'
+ 'EHEE_rd4_0877' 'EEHEE_rd4_0308' 'EEHEE_rd4_0481' '2LCL' '2MH8' '2LHC'
+ 'r10_490_TrROS_Hall' '6OBK' 'r4_43_TrROS_Hall' 'EEHEE_rd4_0005'
+ 'HEEH_KT_rd6_0872' 'HEEH_KT_rd6_3546' 'HEEH_rd3_0055']
+读取 215731 行数据
+esm2-650m 0.39845
+FoldX 0.56897
+MPNNddG 0.60790
+Rasp 0.55930
+读取 215731 行数据
+esm2-650m 0.39845
+FoldX 0.56897
+MPNNddG 0.60790
+Rasp 0.55930
+[0.398 0.569 0.608 0.559]
+[0.398 0.569 0.608 0.559]
+0.39845	0.56897	0.60790	0.55930
+0.39845	0.56897	0.60790	0.55930
+esm2-650m FoldX MPNNddG Rasp
+239 0.687693578830132
+Result: esm2-650m FoldX MPNNddG Rasp 0.68769

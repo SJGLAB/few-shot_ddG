@@ -6,13 +6,14 @@ from scipy.optimize import differential_evolution,shgo
 import pickle
 
 np.set_printoptions(precision=3)
-first_col = 7
+first_col = 6
 
 def calculate_val(df,a,b,c,d,col1,col2,col3,col4):
     one = df['ddG_true'].values
     two = a * df[col1].values + b * df[col2].values + c * df[col3].values + d * df[col4].values
     val = scipy.stats.spearmanr(one, two)[0]
-    ans = -abs(val)
+    #ans = abs(val)
+    ans = val
     return ans
 
 def cal_accuracy(df,pdb_ids):
@@ -24,9 +25,9 @@ def cal_accuracy(df,pdb_ids):
     result_lst = []
     for i in range(first_col,num_cols):
         col1 = cols[i]
-        col2 = cols[8]
-        col3 = cols[9]
-        col4 = cols[10]
+        col2 = cols[i]
+        col3 = cols[i]
+        col4 = cols[i]
         ans = calculate_val(df,1.0,0.0,0.0,0.0,col1,col2,col3,col4)
         result_lst.append(ans)
         print(col1,'%.5f'%(ans))
@@ -63,7 +64,7 @@ effect_numcols = df.shape[1]-first_col
 train_pairs_res = np.zeros((effect_numcols,effect_numcols,effect_numcols,effect_numcols))
 with open('result_cof.pkl', 'rb') as f:  # 二进制读取
     result_cof = pickle.load(f)
-for icol in range(first_col+1,num_cols):
+for icol in range(first_col,num_cols):
     col1 = cols[icol]
     for jcol in range(icol+1,num_cols):
         col2 = cols[jcol]

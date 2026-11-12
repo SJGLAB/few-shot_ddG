@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import precision_recall_curve, auc
 
 plt.rc('font', family='Times New Roman', size=15)
-df = pd.read_csv("../../mixed_val/mixed.csv")
+df = pd.read_csv("mixed_train.csv")
 ddG_true = df['ddG_true'].values
 esm = df['esm2-650m'].values
 foldx = df['FoldX'].values
@@ -13,9 +13,9 @@ rasp = df['Rasp'].values
 mixed = df['mixed_val'].values
 
 methods = {
-    'ESM2-650M': esm,
+    'ESM2-650M': -esm,
     'FoldX': -foldx,
-    'ProteinMPNN-ddG': mpnnddg,
+    'ProteinMPNN-ddG': -mpnnddg,
     'Rasp': -rasp,
     'Ours': -mixed
 }

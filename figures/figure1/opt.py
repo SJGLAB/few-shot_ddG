@@ -22,7 +22,7 @@ print(minv)
 
 plt.plot(x,mean,'-o')
 plt.xlabel('Iteration')
-plt.ylabel('-|SCC|')
+plt.ylabel('-SCC')
 #plt.plot(x,minv,'-o')
 
 #for i in range(energy.shape[1]):

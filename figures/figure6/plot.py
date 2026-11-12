@@ -42,6 +42,6 @@ plt.plot(nums,mean_random_lst,'--s')
 #)
 plt.legend(['Active Learning','Random'])
 plt.xlabel('Number of samples')
-plt.ylabel('|SCC|')
+plt.ylabel('SCC')
 
 plt.savefig('D-optimal.png',bbox_inches='tight',pad_inches=0.1)

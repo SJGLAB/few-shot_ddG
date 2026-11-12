@@ -6,13 +6,13 @@ from scipy.optimize import differential_evolution,shgo
 import pickle
 
 np.set_printoptions(precision=3)
-first_col = 7
+first_col = 6
 
 def calculate_val(df,a,b,c,d,col1,col2,col3,col4):
     one = df['ddG_true'].values
     two = a * df[col1].values + b * df[col2].values + c * df[col3].values + d * df[col4].values
     val = scipy.stats.spearmanr(one, two)[0]
-    ans = abs(val)
+    ans = val
     return ans
 
 df = pd.read_csv('train_df.csv')
